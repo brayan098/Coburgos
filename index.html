@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coburgos | Grandes Recetas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <!-- Cabecera fixed -->
+    <header class="fixed w-full top-0 bg-white/95 backdrop-blur-sm shadow-lg z-50">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="img/logo-coburgos.png" alt="Company Logo" class="h-16 ml-2 w-auto object-contain">
+                </div>
+    
+                <div class="flex items-center space-x-4 md:hidden">
+                    <div class="relative">
+                        <!-- Barra de búsqueda con solo Tailwind CSS -->
+                        <input type="text" placeholder="Buscar..."
+                            class="w-36 transition-all duration-300 ease-in-out focus:w-64 p-2 pl-10 pr-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500">
+                    
+                        <!-- Icono de lupa, posicionado absolutamente -->
+                        <svg class="absolute left-3 top-2 w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M13.568 12.29a7.5 7.5 0 1 0-1.278 1.278l4.673 4.673a1 1 0 1 0 1.414-1.414l-4.673-4.673zM14 8.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    
+                    <button class="relative p-2 hover:bg-gray-100 rounded-full transition-colors duration-300" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart text-gray-600 hover:text-lime-500"></i>
+                        <span class="absolute -top-1 -right-1 bg-lime-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </button>
+                    <!-- Botón de hamburguesa -->
+                    <button id="menu-button" class="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300" aria-label="Menu">
+                        <i class="fas fa-bars text-gray-600"></i>
+                    </button>
+                </div>
+    
+                <!-- Menú completo (versión escritorio) -->
+                <div class="hidden md:flex items-center space-x-8">
+                    
+                    <div class="relative">
+                        <input type="text" placeholder="Buscar..." class="w-64 transition-all duration-300 ease-in-out focus:w-80 p-2 pl-8 pr-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lime-500">
+                        <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">
+                          <i class="fas fa-search"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="text-gray-600 hover:text-lime-500 transition-colors duration-300 font-medium">Inicio</a>
+                    <a href="#" class="text-gray-600 hover:text-lime-500 transition-colors duration-300 font-medium">Nosotros</a>
+                    <a href="#" class="text-gray-600 hover:text-lime-500 transition-colors duration-300 font-medium">Catálogo</a>
+                    <a href="#" class="text-gray-600 hover:text-lime-500 transition-colors duration-300 font-medium">Contacto</a>
+                    <button class="relative p-2 hover:bg-gray-100 rounded-full transition-colors duration-300" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart text-gray-600 hover:text-orange-500"></i>
+                        <span class="absolute -top-1 -right-1 bg-lime-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </button>
+                </div>
+            </div>
+    
+            <div id="mobile-menu" class="md:hidden mt-4 hidden">
+                <div class="flex flex-col space-y-4">
+                    <a href="#" class="text-gray-600 hover:text-lime-500 transition-colors duration-300 font-medium">Inicio</a>
+                    <a href="#" class="text-gray-600 hover:text-lime-500 transition-colors duration-300 font-medium">Nosotros</a>
+                    <a href="#" class="text-gray-600 hover:text-lime-500 transition-colors duration-300 font-medium">Catálogo</a>
+                    <a href="#" class="text-gray-600 hover:text-lime-500 transition-colors duration-300 font-medium">Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Slider sobre coburgos -->
+    <div class="relative overflow-hidden shadow-2xl bg-white w-full" x-data="{ activeSlide: 1, autoplay: true }" x-init="setInterval(() => { if(autoplay) activeSlide = activeSlide === 3 ? 1 : activeSlide + 1 }, 5000)">
+        <div class="relative">
+            
+            <!-- Slide 1 -->
+            <div x-show="activeSlide === 1" class="transition-all duration-500 ease-in-out">
+                <div class="relative h-[300px] sm:h-[400px] lg:h-[500px]">
+                    <img src="img/img (9).png" alt="Coconut products" class="absolute inset-0 w-full h-full object-cover object-top ">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
+                        <div class="p-8 sm:p-12 lg:p-16 h-full flex flex-col justify-end">
+                            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Bienvenido a <span class="text-lime-400">Coburgos</span></h2>
+                            <p class="text-white text-sm sm:text-base lg:text-lg mb-6 max-w-xl">
+                                Somos una empresa del sector alimentario, dedicada al procesamiento y venta de productos a base de coco, frutas cristalizadas e insumos para panadería                            </p>
+                            <button class="bg-orange-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-orange-600 transition w-fit">
+                                Ver Productos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div x-show="activeSlide === 2" class="transition-all duration-500 ease-in-out">
+                <div class="relative h-[300px] sm:h-[400px] lg:h-[500px]">
+                    <img src="img/img (4).png" alt="Sustainable coconut products" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
+                        <div class="p-8 sm:p-12 lg:p-16 h-full flex flex-col justify-end">
+                            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Desarrollamos <span class="text-lime-400">productos</span> <br> a la <span class="text-lime-400">necesidad</span> del cliente</h2>
+                            <p class="text-white text-sm sm:text-base lg:text-lg mb-6 max-w-xl">
+                                Con ingredientes naturales y saludables
+                            </p>
+                            <button class="bg-orange-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-orange-600 transition w-fit">
+                                Conoce Más
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div x-show="activeSlide === 3" class="transition-all duration-500 ease-in-out">
+                <div class="relative h-[300px] sm:h-[400px] lg:h-[500px]">
+                    <img src="img/img (7).png" alt="Coconut-based innovation" class="absolute inset-0 w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
+                        <div class="p-8 sm:p-12 lg:p-16 h-full flex flex-col justify-end">
+                            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4"><span class="text-lime-400">Coco,</span> el ingrediente de <br>grandes <span class="text-lime-400">recetas</span> </h2>
+                            <p class="text-white text-sm sm:text-base lg:text-lg mb-6 max-w-xl">
+                                Productos seleccionados para entregarle lo mejor
+                            </p>
+                            <button class="bg-orange-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-orange-600 transition w-fit">
+                                Explorar Ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation Buttons -->
+            <div class="absolute bottom-4 right-4 flex space-x-2">
+                <button @click="activeSlide = 1" :class="{ 'bg-white': activeSlide === 1, 'bg-gray-400': activeSlide !== 1 }" class="w-3 h-3 rounded-full transition-colors duration-300"></button>
+                <button @click="activeSlide = 2" :class="{ 'bg-white': activeSlide === 2, 'bg-gray-400': activeSlide !== 2 }" class="w-3 h-3 rounded-full transition-colors duration-300"></button>
+                <button @click="activeSlide = 3" :class="{ 'bg-white': activeSlide === 3, 'bg-gray-400': activeSlide !== 3 }" class="w-3 h-3 rounded-full transition-colors duration-300"></button>
+            </div>
+            <!-- Autoplay Control -->
+            <button @click="autoplay = !autoplay" class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm p-2 rounded-lg">
+                <svg x-show="!autoplay" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                </svg>
+                <svg x-show="autoplay" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </button>
+            <!-- Arrow Navigation -->
+            <button @click="activeSlide = activeSlide === 1 ? 3 : activeSlide - 1" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm p-2 rounded-lg hover:bg-white/30 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button @click="activeSlide = activeSlide === 3 ? 1 : activeSlide + 1" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm p-2 rounded-lg hover:bg-white/30 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Que hace especial a coburgos -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+    <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="w-full md:w-1/2">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Que hace tan especial <span class="text-lime-500">nuestras</span> recetas?</h2>
+            <p class="text-lg text-gray-600 mb-8">En Coburgos, nos especializamos en crear productos premium a base de coco que llevan el sabor puro y fresco de la naturaleza a su mesa. Nuestro compromiso con la calidad y la sustentabilidad garantiza que cada producto brinde un sabor y un valor nutricional excepcionales.</p>
+            <div class="space-y-4 text-gray-600 mb-8">
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Recetas saladas el inigualable sabor del coco</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Pescados, sopas, purés, arroces, estofados, cremas</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Recetas dulces y deliciosas con coco</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <svg class="w-11 h-11 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Helados, postres, tortas, panes, bizcochos, gelatinas, confitería, cocadas, ponqués, pastelitos, limonadas, batidos, malteadas, galletas, yogurt.</span>
+                </div>
+            </div>
+            <a href="#products" class="inline-block px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">Conoce Nuestros productos</a>
+        </div>
+        <div class="w-full md:w-1/2">
+            <div class="relative">
+                <img src="img/aceite-de-coco-virgen.png" alt="Fresh coconut products" class="w-full h-[500px] object-cover rounded-2xl shadow-2xl">
+                <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg">
+                    <img src="img/img (3).jpeg" alt="Coconut oil product" class="w-32 h-32 object-cover rounded-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Logros de la empresa -->
+    <section class="relative h-80 bg-gray-800">
+        <div class="absolute inset-0 bg-cover bg-center" 
+             style="background-image: url('img/img (3).jpg'); background-attachment: fixed;"></div>
+        
+        <div class="absolute inset-0 bg-gradient-to-l from-black via-transparent to-black opacity-80"></div>
+    
+        <div class="absolute inset-0 flex items-center justify-center text-white text-xl font-bold">
+            <div class="flex justify-around w-full p-4">
+                <div class="text-center">
+                    <p class="text-4xl">1</p> 
+                    <p class="text-lg">Laboratorio propio</p>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-4xl">37</p> 
+                    <p class="text-lg">Años de experiencia</p> 
+                </div>
+
+                <div class="text-center">
+                    <p class="text-4xl">1</p> 
+                    <p class="text-lg">Planta de producción <br>de alimentos certificada</p> 
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <!-- Slider de productos -->
+    <div class="swiper-container relative max-w-5xl mx-auto py-10 ">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-8 tracking-wide">
+            ¡Conoce <span class="text-lime-500"></span>nuestros productos!
+        </h1>
+    
+        <div class="swiper-wrapper m-12">
+            <div class="swiper-slide text-center">
+                <a href="">
+                    <div class="relative w-64 h-64 overflow-hidden rounded-lg mb-2 shadow-lg">
+                        <img src="img/imgs_productos/coco-deshidratado-azucarado.jpeg" 
+                             alt="Coco deshidratado"
+                             class="absolute w-full h-full object-cover">
+                    </div>
+                </a>
+                <p class="text-gray-800 text-xl font-semibold tracking-wide">Coco deshidratado</p>
+            </div>
+    
+            <div class="swiper-slide text-center">
+                <a href="">
+                    <div class="relative w-64 h-64 overflow-hidden rounded-lg mb-2 shadow-lg">
+                        <img src="img/imgs_productos/crema-de-coco.jpeg" 
+                             alt="Crema de coco"
+                             class="absolute w-full h-full object-cover">
+                    </div>
+                </a>
+                <p class="text-gray-800 text-xl font-semibold tracking-wide">Crema de coco</p>
+            </div>
+    
+            <div class="swiper-slide text-center">
+                <a href="">
+                    <div class="relative w-64 h-64 overflow-hidden rounded-lg mb-2 shadow-lg">
+                        <img src="img/imgs_productos/fruta-cristalizada.jpeg" 
+                             alt="Fruta cristalizada"
+                             class="absolute w-full h-full object-cover">
+                    </div>
+                </a>
+                <p class="text-gray-800 text-xl font-semibold tracking-wide">Fruta cristalizada</p>
+            </div>
+    
+            <div class="swiper-slide text-center">
+                <a href="">
+                    <div class="relative w-64 h-64 overflow-hidden rounded-lg mb-2 shadow-lg">
+                        <img src="img/imgs_productos/coco-en-hojuelas-confitadas.jpg" 
+                             alt="Coco en hojuelas confitadas"
+                             class="absolute w-full h-full object-cover">
+                    </div>
+                </a>
+                <p class="text-gray-800 text-xl font-semibold tracking-wide">Coco en hojuelas confitadas</p>
+            </div>
+    
+            <div class="swiper-slide text-center">
+                <a href="">
+                    <div class="relative w-64 h-64 overflow-hidden rounded-lg mb-2 shadow-lg">
+                        <img src="img/imgs_productos/coco-deshidratado-azucarado.jpeg" 
+                             alt="Coco deshidratado"
+                             class="absolute w-full h-full object-cover">
+                    </div>
+                </a>
+                <p class="text-gray-800 text-xl font-semibold tracking-wide">Coco deshidratado</p>
+            </div>
+    
+            <div class="swiper-slide text-center">
+                <a href="">
+                    <!-- Ícono de "ver más" -->
+                    <div class="flex items-center justify-center mx-auto w-64 h-64 rounded-lg mb-2 shadow-lg bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                             class="w-16 h-16 text-gray-800" 
+                             fill="none" 
+                             viewBox="0 0 24 24" 
+                             stroke="currentColor" 
+                             stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </div>
+                </a>
+                <p class="text-gray-800 text-xl font-semibold tracking-wide">Ver más</p>
+            </div>
+        </div>
+    
+        <!-- Pagination -->
+        <div class="swiper-pagination absolute mb-4"></div>
+    </div>
+    
+    
+    <!-- Marcas aliadas -->
+    <section class="max-w-full mx-auto p-10 relative" style="background-image: url('img/img (5).png'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-60 z-0"></div>
+    
+        <h1 class="text-4xl font-bold text-center text-white z-10 relative mb-12">Conoce algunos de nuestros clientes</h1>
+    
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            <div class="flex flex-col items-center group">
+                <div class="relative w-40 h-40 rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 z-10">
+                    <img src="img/marcas/d1.png" alt="D1 SAS Logo" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-xl font-semibold text-white z-10 relative">D1 SAS</h3>
+            </div>
+    
+            <div class="flex flex-col items-center group">
+                <div class="relative w-40 h-40 rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 z-10">
+                    <img src="img/marcas/cw.png" alt="CREPS & WAFLES Logo" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-xl font-semibold text-white z-10 relative">CREPS & WAFLES</h3>
+            </div>
+    
+            <div class="flex flex-col items-center group">
+                <div class="relative w-40 h-40 rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 z-10">
+                    <img src="img/marcas/levapan.png" alt="LEVAPAN SA Logo" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-xl font-semibold text-white z-10 relative">LEVAPAN SA</h3>
+            </div>
+    
+            <div class="flex flex-col items-center group">
+                <div class="relative w-40 h-40 rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 z-10">
+                    <img src="img/marcas/bimbo.webp" alt="BIMBO DE COLOMBIA Logo" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-xl font-semibold text-white z-10 relative">BIMBO DE COLOMBIA</h3>
+            </div>
+    
+            <div class="flex flex-col items-center group">
+                <div class="relative w-40 h-40 rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 z-10">
+                    <img src="img/marcas/makro.jpg" alt="MAKRO SUPERMAYORISTA SAS Logo" class="w-full h-full object-cover">
+                </div>
+                <h3 class="mt-4 text-xl font-semibold text-white z-10 relative text-center">MAKRO SUPERMAYORISTA SAS</h3>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Boton flotante de whatsapp -->
+    <a href="https://wa.me/573138889530" target="_blank" aria-label="Contact us on WhatsApp" class="fixed bottom-8 right-8 bg-[#25D366] hover:bg-[#128C7E] p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 animate-wiggle group z-50">
+        <div class="relative">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center animate-pulse">1</span>
+        </div>
+    </a>
+
+    <div class="bg-gray-100 py-12">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-green-600 mb-10">Beneficios del Coco</h2>
+          <div class="relative flex justify-center items-center">
+            <!-- Imagen central -->
+            <div class="w-48 h-48 rounded-full overflow-hidden bg-white shadow-lg flex items-center justify-center">
+              <img src="https://via.placeholder.com/150" alt="Coco" class="object-cover w-full h-full" />
+            </div>
+      
+            <!-- Beneficios alrededor -->
+            <!-- Beneficio 1 -->
+            <div class="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 w-56 bg-white rounded-lg shadow-md p-4">
+              <p class="text-center text-sm text-gray-700 font-medium">
+                <strong class="text-green-600">Dietas de control de peso:</strong> Indicado para la reducción de peso, la osteoporosis, la salud cardiovascular y evitar la retención de líquidos.
+              </p>
+            </div>
+            <!-- Beneficio 2 -->
+            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-56 bg-white rounded-lg shadow-md p-4">
+              <p class="text-center text-sm text-gray-700 font-medium">
+                <strong class="text-green-600">Beneficioso para el corazón:</strong> Ayuda a reducir la presión arterial y el colesterol.
+              </p>
+            </div>
+            <!-- Beneficio 3 -->
+            <div class="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-56 bg-white rounded-lg shadow-md p-4">
+              <p class="text-center text-sm text-gray-700 font-medium">
+                <strong class="text-green-600">Hidratante natural:</strong> Bebida isotónica baja en grasas, azúcares y calorías.
+              </p>
+            </div>
+            <!-- Beneficio 4 -->
+            <div class="absolute bottom-0 left-1/4 transform -translate-x-1/2 w-56 bg-white rounded-lg shadow-md p-4">
+              <p class="text-center text-sm text-gray-700 font-medium">
+                <strong class="text-green-600">Remineralizante:</strong> Regula la tonicidad muscular y mejora la función del corazón.
+              </p>
+            </div>
+            <!-- Beneficio 5 -->
+            <div class="absolute bottom-0 right-1/4 transform translate-x-1/2 w-56 bg-white rounded-lg shadow-md p-4">
+              <p class="text-center text-sm text-gray-700 font-medium">
+                <strong class="text-green-600">Antioxidante:</strong> Contiene minerales como el selenio y el zinc, grandes antioxidantes.
+              </p>
+            </div>
+            <!-- Beneficio 6 -->
+            <div class="absolute bottom-1/4 right-0 transform translate-x-1/2 translate-y-1/2 w-56 bg-white rounded-lg shadow-md p-4">
+              <p class="text-center text-sm text-gray-700 font-medium">
+                <strong class="text-green-600">Energético:</strong> Ideal para días de actividad física intensa o de mucho calor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    
+    <!-- Pie de pagina -->
+    <footer class="bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-gray-200">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Logo y Descripción -->
+                <div class="space-y-4">
+                    <img src="img/logo-coburgos.png" alt="Coburgos Logo" class="h-auto w-32"> <!-- Logo con tamaño ajustado -->
+                    <p class="mt-2 text-lg font-medium">Coburgos | Grandes recetas</p> <!-- Descripción en negrita -->
+                </div>
+        
+                <!-- Sección de Contacto -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Información de Contacto</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2 text-amber-400"></i>
+                            <a href="tel:+6017198589" class="hover:text-amber-400 transition duration-300">(601) 719 8589</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2 text-amber-400"></i>
+                            <a href="tel:+6017198025" class="hover:text-amber-400 transition duration-300">(601) 719 8025</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2 text-amber-400"></i>
+                            <a href="tel:+3138889530" class="hover:text-amber-400 transition duration-300">313 888 9530</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-2 mt-1 text-amber-400"></i>
+                            <span class="text-sm">Zona Industrial el Muña km1 Vía Silvania - Sibaté Cundinamarca, Colombia.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-amber-400"></i>
+                            <a href="mailto:pqr@coburgos.com" class="hover:text-amber-400 transition duration-300">pqr@coburgos.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-amber-400"></i>
+                            <a href="mailto:ventas@coburgos.com" class="hover:text-amber-400 transition duration-300">ventas@coburgos.com</a>
+                        </li>
+                    </ul>
+                </div>
+        
+                <!-- Sección de Redes Sociales -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Síguenos</h3>
+                    <div class="flex space-x-6">
+                        <a href="https://www.facebook.com/ProductosAlimenticiosCoburgos/" aria-label="Facebook" class="text-gray-200 hover:text-amber-400 transition duration-300">
+                            <i class="fab fa-facebook fa-2x"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ProductosAlimenticiosCoburgos/" aria-label="Instagram" class="text-gray-200 hover:text-amber-400 transition duration-300">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Política de Privacidad y Términos -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Enlaces útiles</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-amber-400 transition duration-300">Política de Privacidad</a></li>
+                        <li><a href="#" class="hover:text-amber-400 transition duration-300">Términos y Condiciones</a></li>
+                        <li><a href="#" class="hover:text-amber-400 transition duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Copyright -->
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                <p class="text-center text-gray-400 text-sm">&copy; 2024 Coburgos. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+    <!-- Script slider -->
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: 3,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+            on: {
+                slideChangeTransitionEnd: function () {
+                    applySlideClasses(this);
+                },
+            },
+        });
+    
+        // Función para aplicar clases según el índice activo
+        function applySlideClasses(swiperInstance) {
+            const slides = document.querySelectorAll('.swiper-slide');
+            slides.forEach(slide => {
+                slide.classList.remove('active-slide', 'blurred-slide');
+            });
+    
+            const activeSlide = slides[swiperInstance.activeIndex];
+            if (activeSlide) {
+                activeSlide.classList.add('active-slide');
+            }
+    
+            slides.forEach(slide => {
+                if (!slide.classList.contains('active-slide')) {
+                    slide.classList.add('blurred-slide');
+                }
+            });
+        }
+    
+        // Llama a la función después de inicializar Swiper
+        window.addEventListener('load', () => {
+            applySlideClasses(swiper);
+        });
+    </script>
+    
+
+
+    <!-- Recursos js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>      
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+  
+</html>
