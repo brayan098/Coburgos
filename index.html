@@ -207,7 +207,7 @@
     <section class="relative h-80 bg-gray-800">
         <div class="absolute inset-0 bg-cover bg-center" 
              style="background-image: url('img/img (3).jpg'); background-attachment: fixed;"></div>
-        
+    
         <div class="absolute inset-0 bg-gradient-to-l from-black via-transparent to-black opacity-80"></div>
     
         <div class="absolute inset-0 flex items-center justify-center text-white text-xl font-bold">
@@ -216,17 +216,17 @@
                     <p class="text-4xl">1</p> 
                     <p class="text-lg">Laboratorio propio</p>
                 </div>
-
+    
                 <div class="text-center">
-                    <p class="text-4xl">37</p> 
+                    <p id="experience-counter" class="text-4xl">0</p> 
                     <p class="text-lg">Años de experiencia</p> 
                 </div>
-
+    
                 <div class="text-center">
                     <p class="text-4xl">1</p> 
                     <p class="text-lg">Planta de producción <br>de alimentos certificada</p> 
                 </div>
-
+    
             </div>
         </div>
     </section>
@@ -294,8 +294,6 @@
     </div>
     
     
-    
-    
     <!-- Marcas aliadas -->
     <section class="max-w-full mx-auto p-10 relative" style="background-image: url('img/img (5).png'); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-60 z-0"></div>
@@ -350,55 +348,86 @@
         </div>
     </a>
 
-    <div class="bg-gray-100 py-12">
-        <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl font-bold text-center text-green-600 mb-10">Beneficios del Coco</h2>
-          <div class="relative flex justify-center items-center">
-            <!-- Imagen central -->
-            <div class="w-48 h-48 rounded-full overflow-hidden bg-white shadow-lg flex items-center justify-center">
-              <img src="https://via.placeholder.com/150" alt="Coco" class="object-cover w-full h-full" />
-            </div>
+    <section class="relative bg-white p-8 md:pt-12 rounded-lg shadow-lg">
+        <!-- Título principal -->
+        <div class="text-center mb-12">
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-800">
+            ¿Conoces los beneficios de usar <span class="text-lime-500">coco</span> en nuestras recetas?
+          </h1>
+          <p class="text-lg md:text-xl text-green-600 mt-4">
+            Descubre cómo el coco puede transformar tus platillos en opciones más saludables y deliciosas.
+          </p>
+        </div>
       
-            <!-- Beneficios alrededor -->
-            <!-- Beneficio 1 -->
-            <div class="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 w-56 bg-white rounded-lg shadow-md p-4">
-              <p class="text-center text-sm text-gray-700 font-medium">
-                <strong class="text-green-600">Dietas de control de peso:</strong> Indicado para la reducción de peso, la osteoporosis, la salud cardiovascular y evitar la retención de líquidos.
-              </p>
-            </div>
-            <!-- Beneficio 2 -->
-            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-56 bg-white rounded-lg shadow-md p-4">
-              <p class="text-center text-sm text-gray-700 font-medium">
-                <strong class="text-green-600">Beneficioso para el corazón:</strong> Ayuda a reducir la presión arterial y el colesterol.
-              </p>
-            </div>
-            <!-- Beneficio 3 -->
-            <div class="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-56 bg-white rounded-lg shadow-md p-4">
-              <p class="text-center text-sm text-gray-700 font-medium">
-                <strong class="text-green-600">Hidratante natural:</strong> Bebida isotónica baja en grasas, azúcares y calorías.
-              </p>
-            </div>
-            <!-- Beneficio 4 -->
-            <div class="absolute bottom-0 left-1/4 transform -translate-x-1/2 w-56 bg-white rounded-lg shadow-md p-4">
-              <p class="text-center text-sm text-gray-700 font-medium">
-                <strong class="text-green-600">Remineralizante:</strong> Regula la tonicidad muscular y mejora la función del corazón.
-              </p>
-            </div>
-            <!-- Beneficio 5 -->
-            <div class="absolute bottom-0 right-1/4 transform translate-x-1/2 w-56 bg-white rounded-lg shadow-md p-4">
-              <p class="text-center text-sm text-gray-700 font-medium">
-                <strong class="text-green-600">Antioxidante:</strong> Contiene minerales como el selenio y el zinc, grandes antioxidantes.
-              </p>
-            </div>
-            <!-- Beneficio 6 -->
-            <div class="absolute bottom-1/4 right-0 transform translate-x-1/2 translate-y-1/2 w-56 bg-white rounded-lg shadow-md p-4">
-              <p class="text-center text-sm text-gray-700 font-medium">
-                <strong class="text-green-600">Energético:</strong> Ideal para días de actividad física intensa o de mucho calor.
-              </p>
+        <!-- Contenido principal -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center pl-20 pr-20 pb-20">
+          <!-- Beneficios Izquierda -->
+          <div class="space-y-4">
+            <h2 class="text-2xl font-bold text-lime-500">Beneficios</h2>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-4">
+                <span class="text-green-600 text-xl">✔️</span>
+                <div>
+                  <strong>Dietas de control de peso:</strong>
+                  <p>Un ingrediente indicado en las dietas de reducción de peso, para la osteoporosis, la salud cardiovascular y evitar la retención de líquidos.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="text-green-600 text-xl">✔️</span>
+                <div>
+                  <strong>Beneficioso para el corazón:</strong>
+                  <p>Beber agua de coco ayuda a reducir la presión arterial y disminuir los triglicéridos en quienes padecen colesterol.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="text-green-600 text-xl">✔️</span>
+                <div>
+                  <strong>Hidratante natural:</strong>
+                  <p>Baja en grasas y azúcares, aporta pocas calorías y quita la sed. Es una bebida isotónica natural.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+      
+          <!-- Imagen central dinámica -->
+          <div class="flex items-center justify-center">
+            <div class="relative w-48 h-48 group">
+              <img src="img/img (3).png" alt="Coco" 
+                   class="w-full h-full object-cover filter transition-transform transform group-hover:scale-125"
+                   style="filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.7));">
             </div>
           </div>
+      
+          <!-- Beneficios Derecha -->
+          <div class="space-y-4">
+            <h2 class="text-2xl font-bold text-lime-500">Más Beneficios</h2>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-4">
+                <span class="text-green-600 text-xl">✔️</span>
+                <div>
+                  <strong>Remineralizante:</strong>
+                  <p>Regula la tonicidad de los músculos y mejora las funciones del corazón.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="text-green-600 text-xl">✔️</span>
+                <div>
+                  <strong>Antioxidante:</strong>
+                  <p>Minerales como el selenio y zinc son antioxidantes maravillosos.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="text-green-600 text-xl">✔️</span>
+                <div>
+                  <strong>Energético:</strong>
+                  <p>Ideal para días agitados, con mucha actividad física o de mucho calor.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </section>
+      
       
     <!-- Pie de pagina -->
     <footer class="bg-gray-900">
@@ -472,13 +501,15 @@
         </div>
     </footer>
     
-    
+
+  
     <!-- Script slider -->
     <script>
         const swiper = new Swiper('.swiper-container', {
             loop: true,
             centeredSlides: true,
             slidesPerView: 3,
+            initialSlide: 1,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
